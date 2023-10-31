@@ -93,7 +93,7 @@ class RegisterForms(forms.Form):
                 return password_confirm
 
 class MessageSend(forms.Form):
-    nome_form = forms.CharField(
+    name_form = forms.CharField(
         label='Nome',
         required= True,
         max_length= 45,

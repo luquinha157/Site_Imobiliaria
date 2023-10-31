@@ -16,7 +16,7 @@ from django.contrib.auth.models import User
 
 
 class Message(models.Model):
-    nome = models.CharField(max_length = 30)
+    name = models.CharField(max_length = 30)
     email = models.EmailField(max_length= 40)
     subject = models.TextField(max_length=14)
     message = models.CharField(max_length=255)

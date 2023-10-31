@@ -10,7 +10,10 @@ from django.contrib import messages
 def index(request):
     user = User.objects.all()
     form = RegisterForms()
-    return render(request, 'index.html', {'users': user, 'form':form})
+
+    return render(request, 'index.html', {
+        'users': user, 
+        'form_Message':Message.objects.all()})
 
 def dashboard(request):
     return render(request, "dashboard.html")
@@ -51,7 +54,7 @@ def messageEnviar(request):
 
         if form_Message.is_valid():
             Message.objects.create(
-            nome = form_Message['nome_form'].value(),
+            name = form_Message['name_form'].value(),
             email = form_Message['email_form'].value(),
             subject = form_Message['subject_form'].value(),
             message = form_Message['message_form'].value(),

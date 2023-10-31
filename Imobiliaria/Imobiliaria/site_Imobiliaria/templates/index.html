@@ -585,20 +585,19 @@ https://templatemo.com/tm-591-villa-agency
           <form id="contact-form" action="" method="post">
             <div class="row">
               <div class="col-lg-12">
-                <form action= "{% url 'messageEnviar' %}" method="POST" class="mx-1 mx-md-4">
+                <form action= "{% url 'messageEnviar' %}" method="POST" >
                   {% csrf_token %}
-                  {% for field in form_Message.visible_fields %}
+                  {% for field in messageEnviar.visible_fields %}
                 <fieldset>
                   <label for="{{field.id_for_label}}">{{field.label}}</label>
                   {{field}}
                 </fieldset>
               </div>
-              
+              {% endfor %}
               <div class="col-lg-12">
                 <fieldset>
                   <button type="submit" id="form-submit" class="orange-button">Send Message</button>
                 </fieldset>
-                {% endfor %}
               </form>
               </div>
             </div>
