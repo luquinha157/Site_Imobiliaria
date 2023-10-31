@@ -3,5 +3,6 @@ from . import views
 
 urlpatterns =[
     path("", views.index, name="index"),
-    path('',include('site_Imobiliaria.urls')),
+    path('properties/',views.properties, name="properties"),
+    path('messageEnviar/',views.messageEnviar, name="messageEnviar"),
 ]
